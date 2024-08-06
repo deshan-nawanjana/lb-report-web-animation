@@ -1,0 +1,96 @@
+[data-arrow-holder] {
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  margin: auto;
+}
+
+.section {
+  text-align: center;
+  font-size: 40px;
+  color: #FFF;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 100vh;
+  line-height: 100vh;
+}
+
+.section-a {
+  background-image: linear-gradient(90deg, #170b10, #132b3e, #2d4834, #2d4834, #4f180b, #63141c);
+  background-size: cover;
+  height: 100vh;
+  line-height: 100vh;
+}
+
+.section-b {
+  background-image: linear-gradient(#11141e, #06253a);
+  background-size: cover;
+  height: 150vh;
+  line-height: 120vh;
+}
+
+.section-c {
+  padding: 40vh 0px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.section-video {
+  width: 75vw;
+  height: 60vh;
+  background-color: #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vw;
+  max-width: 1000px;
+}
+
+.section-d {
+  background-color: #06253a;
+  padding: 10vh 0px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.section-person {
+  flex-grow: 1;
+  height: 50vh;
+  position: relative;
+}
+
+.section-arrow {
+  width: 10vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.section-person-card {
+  background-color: #0a3d5f;
+  width: 40vw;
+  height: 50vh;
+  line-height: 50vh;
+  margin: auto;
+  border-radius: 2vw;
+  min-width: 300px;
+}
+
+.section-e {
+  background-color: #06253a;
+  padding: 10vh 0px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.section-f {
+  background-color: #0a3d5f;
+  height: 80vh;
+  line-height: 60vh;
+}

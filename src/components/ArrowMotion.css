@@ -1,0 +1,180 @@
+.arrow-motion {
+  --width: calc(300px * 0.6);
+  --height: calc(358px * 0.6);
+  --tx: calc(var(--width) / -2);
+  --ty: calc(var(--height) / -1.7);
+  position: fixed;
+  width: var(--width);
+  height: var(--height);
+  transform: translateX(var(--tx)) translateY(var(--ty));
+  transform-origin: 50% 59%;
+  transition-property: transform, opacity;
+  transition-duration: 0.8s;
+  display: none;
+}
+
+.arrow-motion-item {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.arrow-motion-inner {
+  position: relative;
+  transition: opacity 1.5s;
+}
+
+.am-left {
+  height: var(--height);
+  width: calc(var(--width) / 2);
+  transform-origin: 100% 59%;
+}
+
+.am-right {
+  height: var(--height);
+  width: calc(var(--width) / 2);
+  left: calc(var(--width) / 2);
+  transform-origin: 0% 59%;
+}
+
+.am-bottom {
+  width: var(--width);
+  height: calc(var(--height) * 0.41);
+  top: calc(var(--height) - calc(var(--height) * 0.41));
+  transform-origin: 50% 0%;
+}
+
+.am-play {
+  width: var(--width);
+  height: var(--height);
+  transition-property: opacity;
+  transition-duration: 0.8s;
+  opacity: 0;
+}
+
+.arrow-motion[data-active="true"] .am-bottom {
+  animation-name: active-am-bottom;
+}
+
+.arrow-motion[data-active="true"] .am-left {
+  animation-name: active-am-left;
+}
+
+.arrow-motion[data-active="true"] .am-right {
+  animation-name: active-am-right;
+}
+
+@keyframes active-am-bottom {
+  0% {
+    opacity: 1;
+    transform: scale(0.7) rotateY(-90deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(0.7) rotateY(0deg) rotateZ(90deg);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes active-am-left {
+  0% {
+    opacity: 0;
+    transform: scale(1) rotateY(130deg);
+  }
+
+  39% {
+    opacity: 0;
+    transform: scale(1) rotateY(130deg);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1) rotateY(130deg);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes active-am-right {
+  0% {
+    opacity: 0;
+    transform: scale(1) rotateZ(20deg);
+  }
+
+  83% {
+    opacity: 0;
+    transform: scale(1) rotateZ(20deg);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1) rotateZ(20deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateZ(0deg);
+  }
+}
+
+.arrow-motion[data-active="true"] {
+  display: block;
+  opacity: 1;
+}
+
+.arrow-motion[data-section="start"] {
+  transform: translateX(var(--tx)) translateY(var(--ty)) scale(1);
+  opacity: 1;
+}
+
+.arrow-motion[data-section="video"] {
+  transform: translateX(var(--tx)) translateY(var(--ty)) rotate(90deg) scale(0.5);
+}
+
+.arrow-motion[data-section="video"] .arrow-motion-inner {
+  opacity: 0;
+}
+
+.arrow-motion[data-section="video"] .am-play {
+  opacity: 1;
+}
+
+.arrow-motion[data-section="person-1"] {
+  transform: translateX(var(--tx)) translateY(var(--ty)) rotate(-90deg) scale(1.8);
+}
+
+.arrow-motion[data-section="person-2"] {
+  transform: translateX(var(--tx)) translateY(var(--ty)) rotate(90deg) scale(1.8);
+}
+
+.arrow-motion[data-section="footer"] {
+  transform: translateX(var(--tx)) translateY(var(--ty)) rotate(110deg) scale(0.8);
+}
+
+.arrow-motion[data-section="footer"] .arrow-motion-inner {
+  opacity: 0;
+}
