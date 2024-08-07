@@ -43,6 +43,7 @@ export default function ArrowMotion() {
     }
     // check section states
     if (section !== lastSection) {
+      lastSection = null
       // animate position
       const top = lastPoints.top + (anchor.top - lastPoints.top) * delta
       const left = lastPoints.left + (anchor.left - lastPoints.left) * delta
@@ -52,6 +53,7 @@ export default function ArrowMotion() {
       // set direct position
       setPoints(anchor)
       lastPoints = anchor
+      lastSection = section
     }
     // update last stamp
     lastStamp = thisStamp
